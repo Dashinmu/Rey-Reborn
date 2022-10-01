@@ -13,67 +13,102 @@
 </head>
 
 <body>
-  <!-- Start App -->
+  <!-- Begin -->
   <div id="app">
 
+    <!-- Заголовок: Список задач, инпут для нота и кнопка добавить -->
     <div class="header">
       <div class="container header__container">
         <div class="logo">Список задач</div>
         <div class="wrapper">
           <div class="form">
+
+            <!-- Инпут нота. -->
+            <!-- Подсказка к инпуту что туда вводить на основе переменной из .js -->
+            <!-- Событие на нажатие enter (буквально выполнение метода на кнопку Добавить) -->
+            <!-- taskInput - строка нота (буквально текст задачи) -->
             <input 
               type="text" 
               :placeholder = "placeholderString"
               @keypress.enter = "addTask"
               v-model = "taskInput" 
-              >
+            >
+             
+            <!-- Кнопка Добавить.  -->
+            <!-- Выполнение метода добавление нота в список на выполнение needToDoList[] -->  
             <button class="btn" @click = "addTask">Добавить</button>
+
           </div>
         </div>
       </div>
     </div>
 
+
     <div class="container">
       <div class="wrapper">
+
+        <!-- Список на выполнение, он же needToDoList[] -->
         <div class="wrapper__list">
           <h2>
             <span>Нужно сделать</span>
-            <span class="task-num">{{ countTaskToDo }}</span>
+
+            <!-- Количество нотов в needToDoList[] -->
+            <span class="task-num">{{ TasksToDo }}</span>
           </h2>
+
+          <!-- Условие нотов в списке не 0 -->
           <ul class="task-list" v-if = "needToDoList != 0">
-            <li v-for = "(myTask, index) in needToDoList" :key="myTask.id">
+
+            <!-- Цикл для просмотра всех нотов и их индекс (по циклу) в списке needToDoList[] -->
+            <li v-for = "(note, index) in needToDoList" :key="note.id">
               <div>
+
+                <!-- Статус выполнения нота. Ивент на смену состояния. Метод смены статуса -->
                 <input 
                   type="checkbox" 
-                  @change = "changeStatusTask_Done(index)"
+                  @change = "change_StatusToDone(index)"
                 />
+
+                <!-- Инпут для изменяемого нота. -->
+                <!-- Выводится если ключ нота совпадает с ключом изменяемого нота -->
                 <input 
                   type = "text"
-                  v-model = "editedTaskTitle"
-                  v-if = "editedTaskId == myTask.id"
+                  v-model = "editedNoteTitle"
+                  v-if = "editedNoteID == note.id"
                 >
-                <span v-else>{{myTask.title}}</span>
+
+                <!-- Если ничего не изменяется - вывести поле нота -->
+                <span v-else>{{note.title}}</span>
               </div>
+
               <div>
+
+                <!-- Кнопка подтверждения изменений в ноте -->
+                <!-- Выводится только если ключ нота совпадает с ключом изменяемого нота -->
                 <button  
                   class = "btn btn_mr" 
-                  v-if = "editedTaskId == myTask.id"
-                  @click = "editTaskEnd"
+                  v-if = "editedNoteID == note.id"
+                  @click = "edit_NoteAccept"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
                     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                     </svg>
                 </button>
+
+                <!-- Кнопка редактирования нота -->
+                <!-- Показывается всегда, если не показывается кнопка подтверждения изменений -->
                 <button  
                   class = "btn btn_yellow btn_icon" 
                   v-else
-                  @click = "editTask(myTask)"
+                  @click = "edit_NoteUpdate(note)"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                     <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                     </svg>                  
                 </button>
-                <button class="btn btn_red btn_icon" @click = "removeTask(index)">
+
+                <!-- Кнопка удаления нота -->
+                <button class="btn btn_red btn_icon" @click = "removeNoteToDo(index)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -82,24 +117,42 @@
               </div>
             </li>
           </ul>
+
+          <!-- Если нотов в списке на выполнение 0 -->
           <div v-else>Задач нет</div>
+
+          <!-- Если нотов в списке на выполнение больше 10 -->
           <div v-if = "needToDoList.length > 10">Может уже пора делать задачи, а не только ставить?</div>
         </div>
+        <!-- Конец -->
 
+        <!-- Ноты в списке выполненых -->
         <div class="wrapper__list">
           <h2>
             <span>Уже сделаны</span>
-            <span class="task-num">{{ countTaskDone }}</span>
+
+             <!-- Количество нотов в completeToDoList[] -->
+            <span class="task-num">{{ TasksDone }}</span>
           </h2>
+
+          <!-- Условие нотов в списке не 0 -->
           <ul class="task-list complete-list" v-if = "completeToDoList != 0">
-            <li v-for = "(myTask, index) in completeToDoList" :key="myTask.id">
+
+            <!-- Цикл для просмотра всех нотов и их индекс (по циклу) в списке completeToDoList[] -->
+            <li v-for = "(note, index) in completeToDoList" :key="note.id">
               <div>
+
+                <!-- Статус выполнения нота. Ивент на смену состояния. Метод смены статуса -->
                 <input type="checkbox" checked 
-                @change = "changeStatusTask_ToDo(index)"
+                @change = "change_StatusToDo(index)"
                 >
-                <span>{{myTask.title}} {{myTask.dt}}</span>
+
+                <!-- Вывод поле нота и дату добавления в список -->
+                <span>{{note.title}} {{note.dt}}</span>
               </div>
-              <button class="btn btn_red btn_icon" @click = "removeTask(index)">
+
+              <!-- Кнопка удаления -->
+              <button class="btn btn_red btn_icon" @click = "removeNoteDone(index)">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                   <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -107,16 +160,19 @@
               </button>
             </li>
           </ul>
+
+          <!-- Если список пустой -->
           <div v-else>Задач нет</div>
         </div>
+        <!-- Конец -->
 
-        <p><b>Всего:</b> назначено {{ countTaskToDo }}, сделано {{ countTaskDone }}, удалено {{ countTaskDeleted }}</p>
+        <p><b>Всего:</b> назначено {{ TasksToDo }}, сделано {{ TasksDone }}, удалено {{ TasksRemoved }}</p>
       </div>
     </div>
 
   </div>
 </div>
-  <!-- End App -->
+  <!-- Ends -->
   <script src="js/vue.global.js"></script>
 
   <script src="js/app.js"></script>

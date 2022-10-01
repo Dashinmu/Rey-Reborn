@@ -4,14 +4,14 @@ Vue.createApp({
     return {
       taskInput: "" //Из архива: содержит строку нота (задачи)
       , needToDoList: [] //Из архива: список нотов на выполнение
-      , nextToDoId: 0  //Ключ или же ID нота, уникальная переменная для всех нотов
+      , nextToDoID: 0  //Ключ или же ID нота, уникальная переменная для всех нотов
       , completeToDoList: [] //Из архива: список выполненных нотов
       , placeholderString: "Введите название заметки" //Вывод подсказки в инпуте через переменную
-      , countTaskToDo: 0 //Переменная для количества нотов на выполнение
-      , countTaskDone: 0 //Переменная для количества выполненных нотов
-      , countTaskDeleted: 0 //Переменная для количества удалённых нотов
-      , editedTaskId: null //Ключ изменяемого нота, по умолчанию пустой
-      , editedTaskTitle: "" //Поле изменяемого нота, по умолчанию пустое
+      , TasksToDo: 0 //Переменная для количества нотов на выполнение
+      , TasksDone: 0 //Переменная для количества выполненных нотов
+      , TasksRemoved: 0 //Переменная для количества удалённых нотов
+      , editedNoteID: null //Ключ изменяемого нота, по умолчанию пустой
+      , editedNoteTitle: "" //Поле изменяемого нота, по умолчанию пустое
     };
   },
   methods: 
@@ -25,74 +25,93 @@ Vue.createApp({
         //В список нотов needToDoList в конец закидываем нот с указанием id и tittle
         this.needToDoList.push(
           {
-            id: this.nextToDoId++, //Постепенное увеличение id нота для уникальности
+            id: this.nextToDoID++, //Постепенное увеличение id нота для уникальности
             title: this.taskInput //Из текущего инпута достаём строку и кидаем в поле нота
           });
         this.taskInput = ""; //Очищения инпута
-        this.countTaskToDo++; //Подсчёт количества нотов на выполнения (в принципе это длина needToDoList)
+        this.TasksToDo++; //Подсчёт количества нотов на выполнения (в принципе это длина needToDoList)
       }
     }
 
-    //Метод удаления нота myTask из любого списка нотов, используется индекс (не путать с ключом(ID)!)
+    //Метод удаления нота myTask из списка нотов на выполнение, используется индекс (не путать с ключом(ID)!)
     //Индекс указывается автоматически в цикле for в .html файле
     //Индексы при удалении пересчитываются автоматически
     //Пересчёт индексов не вызывает конкретно в этом методе сбои и удаление лишних нотов
     //Из-за пересчёта индексов в будущем будут возникать сбои в других методах
     //Решение сбоев описано где-то ниже
-    , removeTask(index) 
+    , removeNoteToDo(index) 
     {
       this.needToDoList.splice(index, 1); //буквально удалить с индекса (нач. позиция) 1 нот
-      this.completeToDoList.splice(index, 1);
       //Условие, чтобы количество нотов на выполнение не улетело в дыру
-      if (this.countTaskToDo > 0)
+      if (this.TasksToDo > 0)
       {
-        this.countTaskToDo--;
-      }
-      //Условие, чтобы количество выполненных нотов не улетело в дыру
-      if (this.countTaskDone > 0)
-      {
-        this.countTaskDone--;
+        this.TasksToDo--;
       }
       //Переменная всегда возрастает, ибо учитывается любое удаление
-      this.countTaskDeleted++;
+      this.TasksRemoved++;
+    }
+
+    ///Метод удаления нота из списка выполненных
+    , removeNoteDone(index)
+    {
+      this.completeToDoList.splice(index, 1);
+      //Условие, чтобы количество выполненных нотов не улетело в дыру
+      if (this.TasksDone > 0)
+      {
+        this.TasksDone--;
+      }
+      this.TasksRemoved++;
     }
 
     //Метод редактирования нота на выполнение
     //В методе обновляется ключ и поле изменяемого нота.
-    , editTask(task)
+    , edit_NoteUpdate(note)
     {
-      this.editedTaskId = task.id;
-      this.editedTaskTitle = task.title;
+      this.editedNoteID = note.id;
+      this.editedNoteTitle = note.title;
     }
-    , editTaskStop()
+
+    //Метод обновление ключа и поля изменяемого нота к значениям по умолчанию
+    , edit_NoteRe()
     {
-      this.editedTaskId = null;
-      this.editedTaskTitle = "";
+      this.editedNoteID = null;
+      this.editedNoteTitle = "";
     }
-    , editTaskEnd()
+
+    //Метод подтверждения изменений в изменяемом ноте
+    //Смотрим все ноты в списке нотов needToDoList и ищем совпадение по ID изменяемого нота (который мы обновили в методе editTask)...
+    //... при нахождении нужного нота - изменяем его поле и завершаем редактирование
+    , edit_NoteAccept()
     {
-      this.needToDoList.forEach(element => {
-        if (element.id == this.editedTaskId)
+      this.needToDoList.forEach(note => {
+        if (note.id == this.editedNoteID)
         {
-          element.title = this.editedTaskTitle;
-          this.editTaskStop();
+          note.title = this.editedNoteTitle;
+          this.edit_NoteRe();
         }
       });
     }
-    , changeStatusTask_Done(idx)
+
+    //Метод переброса нота из списка на выполнения в список выполненых
+    //Из-за возможности возникновения сбоев по индексу - используем ключ нота
+    //Обязательно объявлять новый список УДАЛЯЕМЫХ НОТОВ.
+    , change_StatusToDone(index)
     {
-      const task_done = this.needToDoList.splice(idx , 1);
-      task_done[0].dt = String(new Date().toLocaleString())
-      this.completeToDoList.push(task_done[0]);
-      this.countTaskToDo--;
-      this.countTaskDone++;
+      const task_done = this.needToDoList.splice(index , 1); //список удаляемых нотов
+      task_done[0].dt = String(new Date().toLocaleString()) //к удаляемому ноту добавляем текущую дату. dt - новый атрибут/ключ списка
+      this.completeToDoList.push(task_done[0]); //кидаем нот в другой список
+      this.TasksToDo--; //обновление переменных подсчёта количества нотов
+      this.TasksDone++;
     }
-    , changeStatusTask_ToDo(idx)
+
+    //Метод переброса нота из списка выполненых в список на выполнение
+    //Построен на основе предыдущего метода
+    , change_StatusToDo(index)
     {
-      const task_todo = this.completeToDoList.splice(idx, 1);
+      const task_todo = this.completeToDoList.splice(index, 1);
       this.needToDoList.push(task_todo[0]);
-      this.countTaskDone--;
-      this.countTaskToDo++;
+      this.TasksDone--;
+      this.TasksToDo++;
     }
   },
 }
