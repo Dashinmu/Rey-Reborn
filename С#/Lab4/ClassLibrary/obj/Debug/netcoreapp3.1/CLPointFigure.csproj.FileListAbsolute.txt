@@ -1,0 +1,8 @@
+D:\h1eb_dash\Lab4\ClassLibrary\bin\Debug\netcoreapp3.1\CLPointFigure.deps.json
+D:\h1eb_dash\Lab4\ClassLibrary\bin\Debug\netcoreapp3.1\CLPointFigure.dll
+D:\h1eb_dash\Lab4\ClassLibrary\bin\Debug\netcoreapp3.1\CLPointFigure.pdb
+D:\h1eb_dash\Lab4\ClassLibrary\obj\Debug\netcoreapp3.1\CLPointFigure.AssemblyInfoInputs.cache
+D:\h1eb_dash\Lab4\ClassLibrary\obj\Debug\netcoreapp3.1\CLPointFigure.AssemblyInfo.cs
+D:\h1eb_dash\Lab4\ClassLibrary\obj\Debug\netcoreapp3.1\CLPointFigure.csproj.CoreCompileInputs.cache
+D:\h1eb_dash\Lab4\ClassLibrary\obj\Debug\netcoreapp3.1\CLPointFigure.dll
+D:\h1eb_dash\Lab4\ClassLibrary\obj\Debug\netcoreapp3.1\CLPointFigure.pdb

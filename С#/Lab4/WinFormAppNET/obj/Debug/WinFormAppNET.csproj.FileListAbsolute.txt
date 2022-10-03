@@ -1,0 +1,13 @@
+D:\h1eb_dash\Lab4\WinFormAppNET\bin\Debug\WinFormAppNET.exe.config
+D:\h1eb_dash\Lab4\WinFormAppNET\bin\Debug\WinFormAppNET.exe
+D:\h1eb_dash\Lab4\WinFormAppNET\bin\Debug\WinFormAppNET.pdb
+D:\h1eb_dash\Lab4\WinFormAppNET\obj\Debug\WinFormAppNET.csproj.AssemblyReference.cache
+D:\h1eb_dash\Lab4\WinFormAppNET\obj\Debug\WinFormAppNET.Properties.Resources.resources
+D:\h1eb_dash\Lab4\WinFormAppNET\obj\Debug\WinFormAppNET.csproj.GenerateResource.cache
+D:\h1eb_dash\Lab4\WinFormAppNET\obj\Debug\WinFormAppNET.csproj.CoreCompileInputs.cache
+D:\h1eb_dash\Lab4\WinFormAppNET\obj\Debug\WinFormAppNET.exe
+D:\h1eb_dash\Lab4\WinFormAppNET\obj\Debug\WinFormAppNET.pdb
+D:\h1eb_dash\Lab4\WinFormAppNET\bin\Debug\CLTest.dll
+D:\h1eb_dash\Lab4\WinFormAppNET\bin\Debug\CLTest.pdb
+D:\h1eb_dash\Lab4\WinFormAppNET\obj\Debug\WinFormAppNET.Form1.resources
+D:\h1eb_dash\Lab4\WinFormAppNET\obj\Debug\WinFormAppNET.csproj.CopyComplete

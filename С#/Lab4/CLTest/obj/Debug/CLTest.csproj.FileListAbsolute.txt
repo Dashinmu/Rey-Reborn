@@ -1,0 +1,5 @@
+D:\h1eb_dash\Lab4\CLTest\bin\Debug\CLTest.dll
+D:\h1eb_dash\Lab4\CLTest\bin\Debug\CLTest.pdb
+D:\h1eb_dash\Lab4\CLTest\obj\Debug\CLTest.csproj.CoreCompileInputs.cache
+D:\h1eb_dash\Lab4\CLTest\obj\Debug\CLTest.dll
+D:\h1eb_dash\Lab4\CLTest\obj\Debug\CLTest.pdb
