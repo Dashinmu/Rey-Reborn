@@ -74,7 +74,7 @@
             <div v-if = "needToDoList.length > 10">Может уже пора делать задачи, а не только ставить?</div>
         </div> -->
 
-        <ListToDo :notes = 'needToDoList' @remove = 'removeNote'/>
+        <ListToDo :notes = 'needToDoList' @remove = 'removeNote' @check = 'change_Status'/>
 
         <!-- <div class="wrapper__list">
             <h2>
@@ -102,9 +102,9 @@
             <div v-else>Задач нет</div>
         </div> -->
 
-        <CompleteList :notes = 'completeToDoList' @remove = 'removeNoteDone'/>
+        <CompleteList :notes = 'completeToDoList' @remove = 'removeNoteDone' @check = 'change_Status'/>
 
-        <p><b>Всего:</b> назначено {{ TasksToDo }}, сделано {{ TasksDone }}, удалено {{ TasksRemoved }}</p>
+        <p><b>Всего:</b> назначено {{ needToDoList.length }}, сделано {{ completeToDoList.length }}, удалено {{ TasksRemoved }}</p>
     </div>
 </div>
 </template>
@@ -125,13 +125,8 @@
         data() 
         {
             return {
-                taskInput: ""
-                , needToDoList: []
-                , nextToDoID: 0
+                needToDoList: []
                 , completeToDoList: []
-                , placeholderString: "Введите название заметки"
-                , TasksToDo: 0
-                , TasksDone: 0
                 , TasksRemoved: 0
                 , editedNoteID: null
                 , editedNoteTitle: ""
@@ -153,7 +148,7 @@
                 this.completeToDoList.splice(index, 1);
                 this.TasksRemoved++;
             }
-            , edit_NoteUpdate(note)
+            /* , edit_NoteUpdate(note)
             {
             this.editedNoteID = note.id;
             this.editedNoteTitle = note.title;
@@ -172,10 +167,10 @@
                 this.edit_NoteRe();
                 }
             });
-            }
+            } */
             , change_Status(index, flag)
             {
-                if (flag == 'false')
+                if (flag == false)
                 {
                     const task_done = this.needToDoList.splice(index , 1);
                     task_done[0].dt = String(new Date().toLocaleString())
