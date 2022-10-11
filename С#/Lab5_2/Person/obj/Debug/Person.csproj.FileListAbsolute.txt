@@ -1,0 +1,6 @@
+D:\Microsoft\!Projects\Lab5_2\Person\bin\Debug\Person.dll
+D:\Microsoft\!Projects\Lab5_2\Person\bin\Debug\Person.pdb
+D:\Microsoft\!Projects\Lab5_2\Person\obj\Debug\Person.csproj.AssemblyReference.cache
+D:\Microsoft\!Projects\Lab5_2\Person\obj\Debug\Person.csproj.CoreCompileInputs.cache
+D:\Microsoft\!Projects\Lab5_2\Person\obj\Debug\Person.dll
+D:\Microsoft\!Projects\Lab5_2\Person\obj\Debug\Person.pdb

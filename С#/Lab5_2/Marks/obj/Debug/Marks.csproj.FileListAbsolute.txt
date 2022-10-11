@@ -1,0 +1,6 @@
+D:\Microsoft\!Projects\Lab5_2\Marks\bin\Debug\Marks.dll
+D:\Microsoft\!Projects\Lab5_2\Marks\bin\Debug\Marks.pdb
+D:\Microsoft\!Projects\Lab5_2\Marks\obj\Debug\Marks.csproj.AssemblyReference.cache
+D:\Microsoft\!Projects\Lab5_2\Marks\obj\Debug\Marks.csproj.CoreCompileInputs.cache
+D:\Microsoft\!Projects\Lab5_2\Marks\obj\Debug\Marks.dll
+D:\Microsoft\!Projects\Lab5_2\Marks\obj\Debug\Marks.pdb

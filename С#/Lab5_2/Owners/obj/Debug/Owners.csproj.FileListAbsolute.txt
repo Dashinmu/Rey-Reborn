@@ -1,0 +1,13 @@
+D:\Microsoft\!Projects\Lab5_2\Owners\bin\Debug\Owners.dll
+D:\Microsoft\!Projects\Lab5_2\Owners\bin\Debug\Owners.pdb
+D:\Microsoft\!Projects\Lab5_2\Owners\bin\Debug\Person.dll
+D:\Microsoft\!Projects\Lab5_2\Owners\bin\Debug\Person.pdb
+D:\Microsoft\!Projects\Lab5_2\Owners\obj\Debug\Owners.csproj.AssemblyReference.cache
+D:\Microsoft\!Projects\Lab5_2\Owners\obj\Debug\Owners.csproj.CoreCompileInputs.cache
+D:\Microsoft\!Projects\Lab5_2\Owners\obj\Debug\Owners.csproj.CopyComplete
+D:\Microsoft\!Projects\Lab5_2\Owners\obj\Debug\Owners.dll
+D:\Microsoft\!Projects\Lab5_2\Owners\obj\Debug\Owners.pdb
+D:\Microsoft\!Projects\Lab5_2\Owners\bin\Debug\Auto.dll
+D:\Microsoft\!Projects\Lab5_2\Owners\bin\Debug\Marks.dll
+D:\Microsoft\!Projects\Lab5_2\Owners\bin\Debug\Auto.pdb
+D:\Microsoft\!Projects\Lab5_2\Owners\bin\Debug\Marks.pdb

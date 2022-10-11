@@ -1,0 +1,9 @@
+D:\Microsoft\!Projects\Lab5_2\Auto\bin\Debug\Auto.dll
+D:\Microsoft\!Projects\Lab5_2\Auto\bin\Debug\Auto.pdb
+D:\Microsoft\!Projects\Lab5_2\Auto\bin\Debug\Marks.dll
+D:\Microsoft\!Projects\Lab5_2\Auto\bin\Debug\Marks.pdb
+D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.csproj.AssemblyReference.cache
+D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.csproj.CoreCompileInputs.cache
+D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.csproj.CopyComplete
+D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.dll
+D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.pdb
