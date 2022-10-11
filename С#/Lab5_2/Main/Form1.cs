@@ -22,7 +22,7 @@ namespace Main
         public List<Owners.Owners> ownersList = new List<Owners.Owners>()
         {
             new Owners.Owners("Daniil", "Matyushin", 21, "15.08.2022", "01.10.2019", Marks.Marks.Mark.Kia),
-            new Owners.Owners("Ivan", "Skolotyan", 21, "15.08.2021", "01.10.2019", Marks.Marks.Mark.Lada)
+            new Owners.Owners("Ivan", "Skolotyan", 21, "15.08.2021", "01.10.2019", Marks.Marks.Mark.Lada),
         };
         public Form1()
         {
@@ -31,17 +31,47 @@ namespace Main
             for (byte i = 0; i < marks.Length; i++)
             {
                 comboBox1.Items.Add(marks[i]);
+                markBox.Items.Add(marks[i]);
             }
+        }
 
-            foreach(var owner in ownersList)
+        private void TextDisplays()
+        {
+            richTextBox1.Text = "";
+            foreach (var owner in ownersList)
             {
                 richTextBox1.Text += owner.Print() + "\n";
-            }    
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            TextDisplays();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            richTextBox2.Text = "";
+            Marks.Marks.Mark Mark = (Marks.Marks.Mark)Enum.Parse(typeof(Marks.Marks.Mark), comboBox1.Text);
+            foreach (var owner in ownersList)
+            {
+                if (owner.auto.Mark == Mark) richTextBox2.Text += owner.Print() + "\n";
+            }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            Marks.Marks.Mark Mark = (Marks.Marks.Mark)Enum.Parse(typeof(Marks.Marks.Mark), markBox.Text);
+            ownersList.Add(new Owners.Owners
+                (
+                    nameBox.Text
+                    , lastNameBox.Text
+                    , Convert.ToByte(ageBox.Text)
+                    , dtPurshaseBox.Text
+                    , dtReleaseBox.Text
+                    , Mark
+                ));
+            TextDisplays();
         }
     }
 }
