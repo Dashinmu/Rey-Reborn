@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "src/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class = "btn js-modal-open" data-open = "#modal-1">Открыть модалку</button>
+    <button class = "btn js-modal-open" data-open = "#modal-2">Открыть модалку</button>
+
+    <div class = "modal"  id = "modal-1">
+        <div class = "modal__wrapper">
+            <div class = "modal__close">❌</div>
+            <div class = "modal__content">
+                <h3 class = "modal__title">Оставить заявку 1</h1>
+                    <form class = "order-form">
+                        <div class = "order-form__field-wrapper">
+                            <label class = "order-form__label">Имя</label>
+                            <input class = "order-form__text" type="text" />
+                        </div>
+                        <div class = "order-form__field-wrapper">
+                            <label class = "order-form__label">Телефон</label>
+                            <input class = "order-form__text" type="text" />
+                        </div>
+                        <button class = "order-form__btn btn">Отправить заявку</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <div class = "modal"  id = "modal-2">
+        <div class = "modal__wrapper">
+            <div class = "modal__close">❌</div>
+            <div class = "modal__content">
+                <h3 class = "modal__title">Оставить заявку 2</h1>
+                    <form class = "order-form">
+                        <div class = "order-form__field-wrapper">
+                            <label class = "order-form__label">Имя</label>
+                            <input class = "order-form__text" type="text" />
+                        </div>
+                        <div class = "order-form__field-wrapper">
+                            <label class = "order-form__label">Телефон</label>
+                            <input class = "order-form__text" type="text" />
+                        </div>
+                        <button class = "order-form__btn btn">Отправить заявку</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    <script src = "src/script.js"></script>
+</body>
+</html>

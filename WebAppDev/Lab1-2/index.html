@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "ru">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <link rel = "stylesheet" href = "https://povt19d.xenista.ru/css/style.css"> -->
+    <link rel = "stylesheet" href = "src/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "container pt-5" id = "app">
+
+        <div class = "card center">
+            <h2> {{name_h}} {{cnt}} </h2>
+            <div>
+                <button class = "btn primary" v-on:click = "cnt++"> + </button>
+                <button class = "btn danger" v-on:click = "cnt--"> - </button>
+            </div>
+            <hr>
+            <div>
+                <button class = "btn primary" v-on:click = "method_add"> + </button>
+                <button class = "btn danger" v-on:click = "method_sub"> - </button>
+            </div>
+        </div>
+
+        <div class = "card">
+            <h2  :style = "{
+                color: inputValue.length < 5 ? 'red' : 'blue'
+            }"> {{listTitle}} </h2>
+            <div class = "form-control">
+                <input 
+                    type = "text" 
+                    :placeholder = "placeholderString"
+                    @input = "method_inputChange"
+                    @keypress.enter = 'method_inputKey'
+                    @keypress = "method_inputKey1"
+                    v-model = "inputValue"
+                >
+            </div>
+            <h2> inputValue: {{inputValue}} </h2>
+            <button class = "btn" v-on:click = "method_addNewNote"> Add </button>
+            <button class = "btn" v-on:click = "method_removeLastNote"> Remove last </button>
+            <hr>
+            <ul class = "list">
+                <li class = "list-item" v-for = "(myNote, idx) in notes">
+                    <span :class = "{
+                        'bold': true, 
+                        'primary' : myNote.length > 5,
+                        'text-sizemNOTA' : (idx + 1) % 5 == 0
+                    }"> {{useless_method_toUpperCase(myNote)}}  </span>
+                    <button class = "btn danger" @click = "method_removeNote(idx, $event)"> Remove </button>
+                </li>
+                <div v-if = "notes.length == 1"> ONE NOTE? PLEASE MAKE MORE NOTES!!!</div>
+                <div v-if = "notes.length > 9"> YO DUDE WHAT THE?? THERE ARE SO MANY NOTES!! A LOT, DUDE! CALM DOWN!</div>
+                <div class = 'text-greenNOTA' v-if = "notes.length == 0"> Notes ARE empty, that isn't BAA-NA-NANA </div>
+            </ul>
+            <hr/>
+            <p>
+                <strong :class = " notes.length > 10 ? 'text-totaNOTA' : '' ">
+                    TOTA NOTES: {{notes.length}}
+                </strong>
+                | DOUBLE TOTA NOTES: {{doubleCountCompoted}}
+            </p>
+        </div>
+
+        <div class = "card">
+            <h2> {{calcTitle}} </h2>
+            <div class = "form-control d-flex align-items-center">
+                <input
+                    type = "number"
+                    v-bind:placeholder = "placeholderString1"
+                    v-bind:value = "inputValue1"
+                    v-on:input = "method_inputChange1"
+                >
+                +
+                <input
+                    type = "number"
+                    v-bind:placeholder = "placeholderString1"
+                    v-bind:value = "inputValue2"
+                    v-on:input = "method_inputChange2"
+                >
+            </div>
+            <h2> {{inputValue1}} + {{inputValue2}} = {{resultValue}} </h2>
+            <button class = "btn" v-on:click = "method_result"> Calc </button>
+        </div>
+    </div>
+
+
+    <script src = "src/vue.js"></script>
+    <script src = "src/app.js"></script>
+</body>
+</html>
