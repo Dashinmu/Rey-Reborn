@@ -1,24 +1,7 @@
 <template>
-<!-- <div class="header">
-    <div class="container header__container">
-    <div class="logo">Список задач</div>
-    <div class="wrapper">
-        <div class="form">
-            <input 
-                type="text" 
-                :placeholder = "placeholderString"
-                @keypress.enter = "addTask"
-                v-model = "taskInput" 
-            >    
-            <button class="btn" @click = "addTask">Добавить</button>
-        </div>
+    <div class="header">
+        <Header @create='addTask'/>
     </div>
-    </div>
-</div> -->
-
-<div>
-    <Header @create='addTask'/>
-</div>
 
 <div class="container">
     <div class="wrapper">
@@ -72,11 +55,8 @@
             </ul>
             <div v-else>Задач нет</div>
             <div v-if = "needToDoList.length > 10">Может уже пора делать задачи, а не только ставить?</div>
-        </div> -->
-
-        <ListToDo :notes = 'needToDoList' @remove = 'removeNote' @check = 'change_Status'/>
-
-        <!-- <div class="wrapper__list">
+        </div>
+        <div class="wrapper__list">
             <h2>
                 <span>Уже сделаны</span>
                 <span class="task-num">{{ TasksDone }}</span>
@@ -102,8 +82,15 @@
             <div v-else>Задач нет</div>
         </div> -->
 
-        <CompleteList :notes = 'completeToDoList' @remove = 'removeNoteDone' @check = 'change_Status'/>
-
+        <ListNotes :notes = "needToDoList" :Title = "stringToDo"
+            @remove = "removeNote" @check = "change_Status" @edit = "edit_NoteUpdate" @edit_accept = "edit_NoteAccept"
+            :NoteID = "editedNoteID"
+            :flag = false 
+        />
+        <ListNotes :notes = "completeToDoList" :Title = "stringDone"
+            @remove = "removeNoteDone" @check = "change_Status"
+            :flag = true 
+        />
         <p><b>Всего:</b> назначено {{ needToDoList.length }}, сделано {{ completeToDoList.length }}, удалено {{ TasksRemoved }}</p>
     </div>
 </div>
@@ -111,16 +98,14 @@
 
 <script>
     import Header from '@/components/Header.vue';
-    import ListToDo from '@/components/ListToDo.vue';
-    import CompleteList from '@/components/CompleteList.vue';
+    import ListNotes from '@/components/ListNotes.vue';
 
     export default 
     {
         components:
         {
             Header
-            , ListToDo
-            , CompleteList
+            , ListNotes
         },
         data() 
         {
@@ -128,8 +113,10 @@
                 needToDoList: []
                 , completeToDoList: []
                 , TasksRemoved: 0
-                , editedNoteID: null
+                , editedNoteID: 0
                 , editedNoteTitle: ""
+                , stringToDo: "Нужно сделать"
+                , stringDone: "Сделано"
             };
         },
         methods: 
@@ -148,26 +135,6 @@
                 this.completeToDoList.splice(index, 1);
                 this.TasksRemoved++;
             }
-            /* , edit_NoteUpdate(note)
-            {
-            this.editedNoteID = note.id;
-            this.editedNoteTitle = note.title;
-            }
-            , edit_NoteRe()
-            {
-            this.editedNoteID = null;
-            this.editedNoteTitle = "";
-            }
-            , edit_NoteAccept()
-            {
-            this.needToDoList.forEach(note => {
-                if (note.id == this.editedNoteID)
-                {
-                note.title = this.editedNoteTitle;
-                this.edit_NoteRe();
-                }
-            });
-            } */
             , change_Status(index, flag)
             {
                 if (flag == false)
@@ -180,6 +147,28 @@
                     const task_todo = this.completeToDoList.splice(index, 1);
                     this.needToDoList.push(task_todo[0]);
                 }
+            }
+            , edit_NoteUpdate(note)
+            {
+                this.editedNoteID = note.id;
+                this.editedNoteTitle = note.title;
+                console.log(this.editedNoteID);
+                console.log(this.editedNoteTitle);
+            }
+            , edit_NoteRe()
+            {
+                this.editedNoteID = 0;
+                this.editedNoteTitle = "";
+            }
+            , edit_NoteAccept(string)
+            {
+                this.needToDoList.forEach(note => {
+                    if (note.id == this.editedNoteID)
+                    {
+                        note.title = string;
+                        this.edit_NoteRe();
+                    }
+            });
             }
         }
     }

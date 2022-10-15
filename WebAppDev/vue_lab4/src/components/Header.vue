@@ -1,17 +1,15 @@
 <template>
-    <div class="header">
-        <div class="container header__container">
-            <div class="logo">Список задач</div>
-            <div class="wrapper">
-                <div class="form">
-                    <input 
-                        type="text" 
-                        :placeholder = "placeholderString"
-                        @keypress.enter = "addTask"
-                        v-model = "note.title" 
-                    >    
-                    <button class="btn" @click = "createNote">Добавить</button>
-                </div>
+    <div class="container header__container">
+        <div class="logo">Список задач</div>
+        <div class="wrapper">
+            <div class="form">
+                <input 
+                    type="text" 
+                    :placeholder = "placeholderString"
+                    @keypress.enter = "addTask"
+                    v-model = "note.title" 
+                >    
+                <button class="btn" @click = "createNote">Добавить</button>
             </div>
         </div>
     </div>
