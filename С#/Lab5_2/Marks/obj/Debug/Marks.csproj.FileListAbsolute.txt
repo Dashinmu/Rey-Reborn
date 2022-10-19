@@ -4,3 +4,9 @@ D:\Microsoft\!Projects\Lab5_2\Marks\obj\Debug\Marks.csproj.AssemblyReference.cac
 D:\Microsoft\!Projects\Lab5_2\Marks\obj\Debug\Marks.csproj.CoreCompileInputs.cache
 D:\Microsoft\!Projects\Lab5_2\Marks\obj\Debug\Marks.dll
 D:\Microsoft\!Projects\Lab5_2\Marks\obj\Debug\Marks.pdb
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Marks\bin\Debug\Marks.dll
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Marks\bin\Debug\Marks.pdb
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Marks\obj\Debug\Marks.csproj.AssemblyReference.cache
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Marks\obj\Debug\Marks.csproj.CoreCompileInputs.cache
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Marks\obj\Debug\Marks.dll
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Marks\obj\Debug\Marks.pdb

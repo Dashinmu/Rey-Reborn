@@ -7,3 +7,11 @@ D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.csproj.CoreCompileInputs.cache
 D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.csproj.CopyComplete
 D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.dll
 D:\Microsoft\!Projects\Lab5_2\Auto\obj\Debug\Auto.pdb
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Auto\bin\Debug\Auto.dll
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Auto\bin\Debug\Auto.pdb
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Auto\bin\Debug\Marks.dll
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Auto\bin\Debug\Marks.pdb
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Auto\obj\Debug\Auto.csproj.CoreCompileInputs.cache
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Auto\obj\Debug\Auto.csproj.CopyComplete
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Auto\obj\Debug\Auto.dll
+D:\Dashinmu\Rey-Reborn\С#\Lab5_2\Auto\obj\Debug\Auto.pdb
