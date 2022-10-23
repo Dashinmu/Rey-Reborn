@@ -1,0 +1,8 @@
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Console\bin\Debug\Lab6_2_Console.exe.config
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Console\bin\Debug\Lab6_2_Console.exe
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Console\bin\Debug\Lab6_2_Console.pdb
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Console\obj\Debug\Lab6_2_Console.csproj.AssemblyReference.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Console\obj\Debug\Lab6_2_Console.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Console\obj\Debug\Lab6_2_Console.csproj.CoreCompileInputs.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Console\obj\Debug\Lab6_2_Console.exe
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Console\obj\Debug\Lab6_2_Console.pdb

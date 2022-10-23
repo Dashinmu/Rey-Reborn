@@ -1,0 +1,11 @@
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\bin\Debug\Lab6_2_Form.exe.config
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\bin\Debug\Lab6_2_Form.exe
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\bin\Debug\Lab6_2_Form.pdb
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\obj\Debug\Lab6_2_Form.csproj.AssemblyReference.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\obj\Debug\Lab6_2_Form.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\obj\Debug\Lab6_2_Form.Form1.resources
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\obj\Debug\Lab6_2_Form.Properties.Resources.resources
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\obj\Debug\Lab6_2_Form.csproj.GenerateResource.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\obj\Debug\Lab6_2_Form.csproj.CoreCompileInputs.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\obj\Debug\Lab6_2_Form.exe
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\Lab6\Lab6_2_Form\obj\Debug\Lab6_2_Form.pdb
