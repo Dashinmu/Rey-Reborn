@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MainShared", "MainShared.shproj", "{DF2A2A21-797F-41F8-ACC8-4FAAC73AFBBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLab6", "..\ConsoleLab6\ConsoleLab6.csproj", "{FA29DC51-DF01-4825-9F42-9AF9622EDE63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormLab6", "..\WindowsFormLab6\WindowsFormLab6.csproj", "{F62EC6FD-34B8-4C62-A409-4EC6E84223F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA29DC51-DF01-4825-9F42-9AF9622EDE63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA29DC51-DF01-4825-9F42-9AF9622EDE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA29DC51-DF01-4825-9F42-9AF9622EDE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA29DC51-DF01-4825-9F42-9AF9622EDE63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62EC6FD-34B8-4C62-A409-4EC6E84223F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62EC6FD-34B8-4C62-A409-4EC6E84223F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62EC6FD-34B8-4C62-A409-4EC6E84223F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62EC6FD-34B8-4C62-A409-4EC6E84223F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61CB51B1-EAAF-41D7-8DB6-4FD887D4567E}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MainShared.projitems*{df2a2a21-797f-41f8-acc8-4faac73afbbd}*SharedItemsImports = 13
+		MainShared.projitems*{f62ec6fd-34b8-4c62-a409-4ec6e84223f5}*SharedItemsImports = 4
+		MainShared.projitems*{fa29dc51-df01-4825-9f42-9af9622ede63}*SharedItemsImports = 4
+	EndGlobalSection
+EndGlobal
