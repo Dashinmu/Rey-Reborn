@@ -1,8 +1,0 @@
-C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\ConsoleLab6\bin\Debug\ConsoleLab6.exe.config
-C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\ConsoleLab6\bin\Debug\ConsoleLab6.exe
-C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\ConsoleLab6\bin\Debug\ConsoleLab6.pdb
-C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\ConsoleLab6\obj\Debug\ConsoleLab6.csproj.AssemblyReference.cache
-C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\ConsoleLab6\obj\Debug\ConsoleLab6.csproj.SuggestedBindingRedirects.cache
-C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\ConsoleLab6\obj\Debug\ConsoleLab6.csproj.CoreCompileInputs.cache
-C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\ConsoleLab6\obj\Debug\ConsoleLab6.exe
-C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\ConsoleLab6\obj\Debug\ConsoleLab6.pdb
