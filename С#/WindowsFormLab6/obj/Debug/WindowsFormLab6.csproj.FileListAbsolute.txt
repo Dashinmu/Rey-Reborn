@@ -1,0 +1,11 @@
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\bin\Debug\WindowsFormLab6.exe.config
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\bin\Debug\WindowsFormLab6.exe
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\bin\Debug\WindowsFormLab6.pdb
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\obj\Debug\WindowsFormLab6.csproj.AssemblyReference.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\obj\Debug\WindowsFormLab6.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\obj\Debug\WindowsFormLab6.Form1.resources
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\obj\Debug\WindowsFormLab6.Properties.Resources.resources
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\obj\Debug\WindowsFormLab6.csproj.GenerateResource.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\obj\Debug\WindowsFormLab6.csproj.CoreCompileInputs.cache
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\obj\Debug\WindowsFormLab6.exe
+C:\Users\Dashinmu\Documents\GitHub\Rey-Reborn\С#\WindowsFormLab6\obj\Debug\WindowsFormLab6.pdb
