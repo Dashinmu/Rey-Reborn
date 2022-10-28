@@ -1,63 +1,63 @@
 <template>
   <div >
-    <div v-if = "this.tasksComp.filter( (todo) => {return todo.done == false} ).length > 0">
-        <h5 class="aboutUs">Нужно выполнить</h5>
+    <div v-if = "this.notesComp.filter( (todo) => {return todo.done == false} ).length > 0">
+        <h5 class = "aboutUs">Нужно выполнить</h5>
         <q-list 
-          class="bg-white" 
+          class = "bg-white" 
           separator 
           bordered
-          v-for = "task in tasksComp" :key = "task.id"
+          v-for = "note in notesComp" :key = "note.id"
         >    
           <q-item
-            v-if = "task.done == false" 
-            class="done bg-blue-1" 
-            tag="label" 
+            v-if = "note.done == false" 
+            class = "done bg-blue-1" 
+            tag = "label" 
             v-ripple 
             clickable  
-            @click = "task.done = !task.done"
+            @click = "note.done = !note.done"
           >
             <q-item-section avatar>
-              <q-checkbox class = "no-pointer-events" v-model = "task.done" />
+              <q-checkbox class = "no-pointer-events" v-model = "note.done" />
             </q-item-section>
             <q-item-section>
-              {{task.title}}      
+              {{note.title}}      
             </q-item-section>
           </q-item>     
         </q-list>
     </div>
     <div 
-      v-if = "this.tasksComp.filter( (todo) => {return todo.done === true} ).length > 0"
+      v-if = "this.notesComp.filter( (todo) => {return todo.done === true} ).length > 0"
     >
       <h5 class = "aboutUs">Уже выполнены</h5>
       <q-list 
         class = "bg-white" 
         separator 
         bordered
-        v-for = "(task, index) in tasksComp" :key="task.id"
+        v-for = "(note, index) in notesComp" :key="note.id"
       >      
         <q-item  
-          v-if = "task.done == true" 
+          v-if = "note.done == true" 
           class = "done bg-blue-1" 
           tag = "label" 
           v-ripple 
           clickable
-          @click = "task.done = task.done"
+          @click = "note.done = !note.done"
         >
           <q-item-section avatar>
-            <q-checkbox class="no-pointer-events" v-model="task.done" />
+            <q-checkbox class = "no-pointer-events" v-model="note.done" />
           </q-item-section>
           <q-item-section>
-            {{task.title}}      
+            {{note.title}}      
           </q-item-section>
           <q-item-section side>
             <q-btn 
-              v-if = "task.done" 
+              v-if = "note.done" 
               dense 
               flat 
               round 
               color = "primary" 
               icon = "delete" 
-              @click.stop = "deleteNote(index)"
+              @click.stop = "removeNote(index)"
             />
           </q-item-section>
         </q-item>
@@ -78,16 +78,16 @@
     }
     , props: 
     {
-      tasksComp: 
+      notesComp: 
       {
           type: Array
       }
     }
     , methods:
     {
-      deleteNote (index)
+      removeNote(index)
       {
-          this.$emit('deleteNote', index);
+          this.$emit('removeNote', index);
       }
     }
   }

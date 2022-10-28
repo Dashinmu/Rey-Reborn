@@ -3,15 +3,15 @@
     <div class = "row q-pa-sm bg-primary">
       <q-input  
         v-model = "text" 
-        label = "Add task"  
-        @keypress.enter = "addTask"
+        label = "Add note"  
+        @keypress.enter = "addNote"
         filled bg-color = "white" 
         class = "col" 
         square
       >
         <template v-slot:append>
           <q-btn 
-            @click = "addTask" 
+            @click = "addNote" 
             round 
             dense 
             flat 
@@ -21,7 +21,7 @@
       </q-input>
     </div>
     <div 
-      v-if = "tasks.length == 0" 
+      v-if = "notes.length == 0" 
       class = "no-tasks absolute-center"
     >
       <q-icon
@@ -32,7 +32,7 @@
       <div class="text-h5 text-primary text-center">Задач нет</div>
     </div>
     <div v-else>
-      <TaskListVue :tasksComp="tasks" @deleteNote="delTask"/>
+      <TaskListVue :notesComp="notes" @removeNote="removeNote"/>
     </div>   
   </q-page>
 </template>
@@ -49,7 +49,7 @@
     , data () 
     {
       return{
-        tasks: 
+        notes: 
         [
           { title: 'WakeUp', done: true }
           , { title: 'GoOut', done: false }
@@ -62,33 +62,33 @@
     }
     , methods: 
     {
-      addTask() 
+      addNote() 
       {
         if (this.text.replace( /\s/g, '') != "")
         {
           this.tasks.push(
             {
-              id: Date.now(),
-              title: this.text,
-              done: false,
+              id: Date.now()
+              , title: this.text
+              , done: false
             }); 
         }
         this.text = "";
       }
 
-      , delTask(index) 
+      , removeNote(index) 
       {
         this.$q.dialog({
-          title: 'Подтверждение',
-          message: 'Вы уверены, что хотите удалить задачу?',
-          cancel: true,
-          persistent: true
+          title: 'Подтверждение'
+          , message: 'Вы уверены, что хотите удалить задачу?'
+          , cancel: true
+          , persistent: true
         }).onOk(() => {
-          this.tasks.splice(index, 1);
+          this.notes.splice(index, 1);
           this.$q.notify({
-            message: 'Задача удалена',
-            caption: 'только что',
-            color: 'secondary'
+            message: 'Задача удалена'
+            , caption: 'только что'
+            , color: 'secondary'
           })
         })
       

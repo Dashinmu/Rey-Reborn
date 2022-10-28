@@ -77,42 +77,44 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import { date } from 'quasar'
-import { computed } from '@vue/reactivity'
+  import { defineComponent, ref } from 'vue'
+  import { date } from 'quasar'
+  import { computed } from '@vue/reactivity'
 
-export default defineComponent({
-  name: 'MainLayout',
+  export default defineComponent({
+    name: 'MainLayout'
 
-  components: 
-  {
+    , components: 
+    {
 
-  }
-  , setup () {
-    const leftDrawerOpen = ref(false)
+    }
+    , setup() 
+    {
+      const leftDrawerOpen = ref(false)
 
-    return {
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
+      return {
+        leftDrawerOpen,
+        toggleLeftDrawer() 
+        {
+          leftDrawerOpen.value = !leftDrawerOpen.value
+        }
       }
     }
-  }
-  , computed: 
-  {
+    , computed: 
+    {
       getDate()
       {
         const timeStamp = Date.now();
         return date.formatDate(timeStamp, "YYYY-MM-DD")
       }
-  }
-})
+    }
+  })
 </script>
 <style>
-.header-image
-{
-  height: 100%;
-  z-index: -1;
-  opacity: 0.2;
-}
+  .header-image
+  {
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+  }
 </style>
