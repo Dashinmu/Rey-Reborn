@@ -3,7 +3,7 @@
     <div class = "row q-pa-sm bg-primary">
       <q-input  
         v-model = "text" 
-        label = "Add note"  
+        :label = "placeHolderString"  
         @keypress.enter = "addNote"
         filled bg-color = "white" 
         class = "col" 
@@ -25,14 +25,14 @@
       class = "no-tasks absolute-center"
     >
       <q-icon
-        name="check"
-        size="100px"
-        color="primary"
+        name = "today"
+        size = "100px"
+        color = "primary"
       />
       <div class="text-h5 text-primary text-center">Задач нет</div>
     </div>
     <div v-else>
-      <TaskListVue :notesComp="notes" @removeNote="removeNote"/>
+      <TaskListVue :notesCompKS="notes" @removeNote="removeNote"/>
     </div>   
   </q-page>
 </template>
@@ -51,13 +51,13 @@
       return{
         notes: 
         [
-          { title: 'WakeUp', done: true }
-          , { title: 'GoOut', done: false }
-          , { title: 'Smoke', done: false }
-          , { title: 'GoBackToBed', done: false }
+          { title: 'Wake up', done: true }
+          , { title: 'Go out', done: false }
+          , { title: 'Frozen', done: false }
+          , { title: 'Go back to bed', done: false }
         ]
         , text: ""
-        , cntTask: 0
+        , placeHolderString: "Введите задачу"
       }
     }
     , methods: 
@@ -66,7 +66,7 @@
       {
         if (this.text.replace( /\s/g, '') != "")
         {
-          this.tasks.push(
+          this.notes.push(
             {
               id: Date.now()
               , title: this.text
@@ -79,7 +79,8 @@
       , removeNote(index) 
       {
         this.$q.dialog({
-          title: 'Подтверждение'
+          dark: true
+          , title: 'Подтверждение'
           , message: 'Вы уверены, что хотите удалить задачу?'
           , cancel: true
           , persistent: true
@@ -87,8 +88,6 @@
           this.notes.splice(index, 1);
           this.$q.notify({
             message: 'Задача удалена'
-            , caption: 'только что'
-            , color: 'secondary'
           })
         })
       
@@ -98,8 +97,4 @@
 </script>
 
 <style>
-  .aboutUs
-  {
-    text-align: center;
-  }
 </style>
