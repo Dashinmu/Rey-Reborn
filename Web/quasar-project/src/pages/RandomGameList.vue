@@ -67,4 +67,7 @@
     .q-item{
       height: 100%;
     }
+    .my-card{
+    width: 100%;
+  }
   </style>
