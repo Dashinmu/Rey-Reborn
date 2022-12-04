@@ -21,9 +21,11 @@
               {{categories.description}}
             </div>
             <div>-----------------------------------------------------------</div>
+            <p>Скринчики-красавчики</p>
+              <Gallery :screens = "game.screenshots" />
           </section>
           <section v-else>
-            <h2>Данный товар не доступен по ссылке</h2>
+            <h2>Данная игра не доступна по ссылке</h2>
           </section>
           
       
@@ -33,9 +35,12 @@
 </template>
 
 <script>
+import Gallery from 'components/Gallery.vue'
 import axios from 'axios';
 import { Loading } from 'quasar';
-export default{
+export default
+{
+  components: {Gallery},
   data () {
     return {
       game: [],
@@ -65,7 +70,6 @@ export default{
     this.getPost();
   }
 }
-
 </script>
 
 <style>
@@ -84,5 +88,4 @@ h3{
   margin-bottom: 10px;
   padding-bottom: 0;
 }
-
 </style>
