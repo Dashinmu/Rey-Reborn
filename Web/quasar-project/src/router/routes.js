@@ -8,7 +8,8 @@ const routes = [
       { path: '/RandomGameList', component: () => import('src/pages/RandomGameList.vue') },
       { path: '/GameList', component: () => import('src/pages/GameList.vue') },
       { path: '/GameList/:id', component: () => import('pages/GameInfo.vue') },
-      { path: '/GameInfo', component: () => import('pages/GameInfo.vue') }
+      { path: '/GameInfo', component: () => import('pages/GameInfo.vue') },
+      { path: '/FindGame', component: () => import('pages/FindGame.vue') }
     ],
   },
 

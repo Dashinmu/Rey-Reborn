@@ -22,7 +22,7 @@
             </div>
             <div>-----------------------------------------------------------</div>
             <p>Скринчики-красавчики</p>
-              <Gallery :screens = "game.screenshots" />
+              <Gallery :screens= "game.screenshots" />
           </section>
           <section v-else>
             <h2>Данная игра не доступна по ссылке</h2>
